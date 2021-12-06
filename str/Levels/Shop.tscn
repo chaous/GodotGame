@@ -1,0 +1,241 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://str/Buttons/buy200.gd" type="Script" id=1]
+[ext_resource path="res://assets/Font.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/coin.png" type="Texture" id=3]
+[ext_resource path="res://assets/recucle.png" type="Texture" id=4]
+[ext_resource path="res://assets/speed.png" type="Texture" id=5]
+[ext_resource path="res://str/Buttons/Play.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/arrow.png" type="Texture" id=7]
+[ext_resource path="res://str/Levels/Speed.gd" type="Script" id=8]
+[ext_resource path="res://str/Buttons/exit.gd" type="Script" id=9]
+[ext_resource path="res://str/Levels/your money.gd" type="Script" id=10]
+[ext_resource path="res://str/Levels/Moneybonus.gd" type="Script" id=11]
+[ext_resource path="res://str/Levels/Jump.gd" type="Script" id=12]
+[ext_resource path="res://str/Levels/Recuckle.gd" type="Script" id=13]
+[ext_resource path="res://str/Buttons/buy500.gd" type="Script" id=14]
+[ext_resource path="res://str/Buttons/buy1000.gd" type="Script" id=15]
+[ext_resource path="res://str/Buttons/buy2000.gd" type="Script" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="Shop" type="Node2D"]
+
+[node name="Speed" type="Label" parent="."]
+margin_left = 172.734
+margin_top = 63.404
+margin_right = 451.734
+margin_bottom = 132.404
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0509804, 0.0352941, 0.0352941, 1 )
+text = "speed bonus"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speed2" parent="Speed" instance=ExtResource( 6 )]
+margin_left = 459.266
+margin_top = 0.596039
+margin_right = 761.266
+margin_bottom = 144.596
+rect_scale = Vector2( 0.523511, 0.523511 )
+text = "buy"
+script = null
+
+[node name="Money" type="Label" parent="."]
+margin_left = 177.151
+margin_top = 239.026
+margin_right = 480.151
+margin_bottom = 308.026
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0509804, 0.0352941, 0.0352941, 1 )
+text = "money bonus"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="money2" parent="Money" instance=ExtResource( 6 )]
+margin_left = 454.849
+margin_top = -7.02634
+margin_right = 756.849
+margin_bottom = 136.974
+rect_scale = Vector2( 0.523511, 0.523511 )
+text = "buy"
+script = null
+
+[node name="Jump" type="Label" parent="."]
+margin_left = 176.329
+margin_top = 411.0
+margin_right = 440.329
+margin_bottom = 480.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0509804, 0.0352941, 0.0352941, 1 )
+text = "jump bonus"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jump" parent="Jump" instance=ExtResource( 6 )]
+margin_left = 455.671
+margin_top = -11.0
+margin_right = 757.671
+margin_bottom = 133.0
+rect_scale = Vector2( 0.523511, 0.523511 )
+text = "buy"
+script = null
+
+[node name="Recuckle" type="Label" parent="."]
+margin_left = 176.285
+margin_top = 588.077
+margin_right = 501.285
+margin_bottom = 657.077
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0509804, 0.0352941, 0.0352941, 1 )
+text = "recycle bonus"
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="recucle2" parent="Recuckle" instance=ExtResource( 6 )]
+margin_left = 463.715
+margin_top = -12.077
+margin_right = 765.715
+margin_bottom = 131.923
+rect_scale = Vector2( 0.523511, 0.523511 )
+text = "buy"
+script = null
+
+[node name="shop" type="Label" parent="."]
+margin_left = 869.0
+margin_top = 62.0
+margin_right = 1116.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0509804, 0.0352941, 0.0352941, 1 )
+text = "buy money"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="your money" type="Label" parent="."]
+margin_left = 436.635
+margin_top = -2.98276
+margin_right = 708.635
+margin_bottom = 66.0172
+rect_scale = Vector2( 1.01165, 0.757973 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0509804, 0.0352941, 0.0352941, 1 )
+text = "you have coins"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Sprite" parent="."]
+position = Vector2( 85.5049, 276.861 )
+texture = ExtResource( 3 )
+
+[node name="recucle" type="Sprite" parent="."]
+position = Vector2( 103.889, 633.243 )
+texture = ExtResource( 4 )
+
+[node name="speed" type="Sprite" parent="."]
+position = Vector2( 71.3629, 97.2557 )
+scale = Vector2( 0.241441, 0.241441 )
+texture = ExtResource( 5 )
+
+[node name="arrow" type="Sprite" parent="."]
+position = Vector2( 93.7286, 436.341 )
+scale = Vector2( 0.153277, 0.153277 )
+texture = ExtResource( 7 )
+
+[node name="Exit" parent="." instance=ExtResource( 6 )]
+margin_left = 3.66351
+margin_top = -0.932838
+margin_right = 303.664
+margin_bottom = 143.067
+rect_scale = Vector2( 0.363782, 0.363782 )
+text = "<-"
+script = ExtResource( 9 )
+
+[node name="buy_coins200" parent="." instance=ExtResource( 6 )]
+margin_left = 847.948
+margin_top = 154.631
+margin_right = 1321.95
+margin_bottom = 298.631
+rect_scale = Vector2( 0.647214, 0.647214 )
+text = "200 coins"
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="buy_coins200"]
+margin_left = 153.0
+margin_top = 144.0
+margin_right = 193.0
+margin_bottom = 158.0
+rect_scale = Vector2( 3.81628, 3.81628 )
+text = "0.99$"
+
+[node name="buy_coins500" parent="." instance=ExtResource( 6 )]
+margin_left = 855.019
+margin_top = 297.466
+margin_right = 1329.02
+margin_bottom = 441.466
+rect_scale = Vector2( 0.647214, 0.647214 )
+text = "500 coins"
+script = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="buy_coins500"]
+margin_left = 152.955
+margin_top = 144.215
+margin_right = 192.955
+margin_bottom = 158.215
+rect_scale = Vector2( 3.81628, 3.81628 )
+text = "1.99$"
+
+[node name="buy_coins1001" parent="." instance=ExtResource( 6 )]
+margin_left = 855.019
+margin_top = 421.917
+margin_right = 1329.02
+margin_bottom = 565.917
+rect_scale = Vector2( 0.647214, 0.647214 )
+text = "1000 coins"
+script = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="buy_coins1001"]
+margin_left = 152.955
+margin_top = 144.215
+margin_right = 192.955
+margin_bottom = 158.215
+rect_scale = Vector2( 3.81628, 3.81628 )
+text = "2.99$"
+
+[node name="buy_coins2001" parent="." instance=ExtResource( 6 )]
+margin_left = 855.019
+margin_top = 559.096
+margin_right = 1329.02
+margin_bottom = 703.096
+rect_scale = Vector2( 0.647214, 0.647214 )
+text = "2000 coins"
+script = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="buy_coins2001"]
+margin_left = 152.955
+margin_top = 144.215
+margin_right = 192.955
+margin_bottom = 158.215
+rect_scale = Vector2( 3.81628, 3.81628 )
+text = "4.99$"
+[connection signal="pressed" from="Speed/speed2" to="Speed" method="_on_speed2_pressed"]
+[connection signal="pressed" from="Money/money2" to="Money" method="_on_money2_pressed"]
+[connection signal="pressed" from="Jump/jump" to="Jump" method="_on_jump_pressed"]
+[connection signal="pressed" from="Recuckle/recucle2" to="Recuckle" method="_on_recucle2_pressed"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_Exit_pressed"]
+[connection signal="pressed" from="buy_coins200" to="buy_coins200" method="_on_buy_coins200_pressed"]
+[connection signal="pressed" from="buy_coins1001" to="buy_coins1001" method="_on_buy_coins1001_pressed"]
+[connection signal="pressed" from="buy_coins2001" to="buy_coins2001" method="_on_buy_coins2001_pressed"]

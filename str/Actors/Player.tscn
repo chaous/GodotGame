@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/toat.png" type="Texture" id=1]
+[ext_resource path="res://str/Actors/Player.gd" type="Script" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="toat" type="Sprite" parent="."]
+scale = Vector2( 0.246132, 0.218392 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -12.0476, 8.78662, -19.7496, 8.98087, -29.2639, 7.4623, -28.966, 17.008, -32.972, 22.5596, -36.9931, 17.008, -37.7396, 6.40283, -50.669, 2.73753, -56.615, -8.85723, -48.8852, -17.7763, -35.091, -27.7648, -20.6415, -32.3441, -10.9882, -33.5919, 0.466919, -32.3441, 11.2605, -28.0297, 26.6228, -17.9648, 35.8931, -11.0783, 56.9543, -10.641, 60.2245, -6.77612, 57.2516, -2.01929, 44.7649, -1.42469, 31.6552, -2.07288, 27.5214, 3.62944, 17.8822, 5.07851, 19.7915, 15.5215, 15.2335, 22.2948, 11.4671, 18.4945, 10.4659, 8.2569, -5.18182, 8.98087 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

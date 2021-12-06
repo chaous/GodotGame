@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://str/Buttons/Play.tscn" type="PackedScene" id=1]
+[ext_resource path="res://str/Buttons/continue.gd" type="Script" id=2]
+[ext_resource path="res://str/Buttons/quit.gd" type="Script" id=3]
+
+[node name="Pause" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -420.979
+margin_top = -368.654
+margin_right = -420.979
+margin_bottom = -368.654
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" parent="." instance=ExtResource( 1 )]
+margin_left = 407.535
+margin_top = 207.582
+margin_right = 821.535
+margin_bottom = 351.582
+text = "continue"
+script = ExtResource( 2 )
+
+[node name="quitMain" parent="." instance=ExtResource( 1 )]
+margin_left = 374.237
+margin_top = 362.178
+margin_right = 864.237
+margin_bottom = 506.179
+text = "Main menu"
+script = ExtResource( 3 )

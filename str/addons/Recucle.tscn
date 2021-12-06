@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/recucle.png" type="Texture" id=1]
+[ext_resource path="res://str/addons/Recucle.gd" type="Script" id=2]
+[ext_resource path="res://assets/253172__suntemple__retro-bonus-pickup-sfx.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.6245, 0.5 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[node name="Recucle" type="Area2D"]
+scale = Vector2( 0.64, 0.64 )
+collision_layer = 32
+collision_mask = 17
+script = ExtResource( 2 )
+
+[node name="recucle" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -48.091, 35.3779, 26.475, 35.3779, 43.4648, 13.6688, 1.93433, -42.9636, -21.6625, -41.0759, -44.3156, 5.17398 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade_in = SubResource( 1 )
+anims/rotating = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+[connection signal="area_entered" from="." to="." method="_on_Recucle_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Recucle_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

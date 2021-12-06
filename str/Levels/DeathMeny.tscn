@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://str/Buttons/Play.tscn" type="PackedScene" id=1]
+[ext_resource path="res://str/Buttons/quit.gd" type="Script" id=2]
+
+[node name="DeathMeny" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgain" parent="." instance=ExtResource( 1 )]
+margin_left = 416.329
+margin_top = 163.967
+margin_right = 903.329
+margin_bottom = 307.967
+text = "Play again"
+
+[node name="quit" parent="." instance=ExtResource( 1 )]
+margin_left = 416.329
+margin_top = 499.986
+margin_right = 903.329
+margin_bottom = 643.986
+text = "menu"
+script = ExtResource( 2 )
